@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Solution1">
+
+
+    <TextView
+        android:id="@+id/solutiontextg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/yellowshape"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingTop="6dp"
+        android:text="Solution"
+        android:textColor="@color/gray"
+        android:textSize="24sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp">
+
+                <TextView
+                    android:id="@+id/givenText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="left|center_vertical"
+                    android:text="Given:"
+                    android:textColor="@color/yellow"
+                    android:textSize="24sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:gravity="left"
+                    android:orientation="horizontal"
+                    android:paddingLeft="8dp">
+
+                    <TextView
+                        android:id="@+id/label1"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_bold"
+                        android:gravity="left|center_vertical"
+                        android:text="x"
+                        android:textColor="@color/yellow"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/given_x"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins"
+                        android:text="= x"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:gravity="left"
+                    android:orientation="horizontal"
+                    android:paddingLeft="8dp">
+
+                    <TextView
+                        android:id="@+id/label3"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_bold"
+                        android:gravity="left|center_vertical"
+                        android:text="f(x)"
+                        android:textColor="@color/yellow"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/given_fx"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins"
+                        android:text="= f(x)"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:padding="5dp"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/solveH"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="6dp"
+                        android:text="Solve for h"
+                        android:textColor="@color/yellow"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/hSolutionm1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="6dp"
+                        android:text="(solution)"
+                        android:textIsSelectable="true"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/hResultm1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="6dp"
+                        android:text="(Result)"
+                        android:textColor="@color/white"
+                        android:textIsSelectable="true"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:padding="5dp"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/solveTable"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="6dp"
+                        android:text="Table"
+                        android:textColor="@color/yellow"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/solveTabletext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="6dp"
+                        android:text="Add h to x1 until you get x2"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TableLayout
+                        android:id="@+id/tableLayoutm1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:gravity="center">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/nValuesTitle"
+                                android:layout_width="50dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="n"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/xValuesTitle"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="x Values"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/fxValuesTitle"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="f(x) Values"
+                                android:textStyle="bold" />
+                        </TableRow>
+
+
+                    </TableLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:padding="5dp"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/rule1Text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="6dp"
+                        android:text="Trapezoidal Rule"
+                        android:textColor="@color/yellow"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/rule1Solutionm1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="6dp"
+                        android:text="(solution)"
+                        android:textIsSelectable="true"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/rule1Resultm1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="6dp"
+                        android:text="(result)"
+                        android:textIsSelectable="true"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:padding="5dp"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/rule2Text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="6dp"
+                        android:text="Simpon's 1/3 Rule"
+                        android:textColor="@color/yellow"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/rule2Solutionm1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="6dp"
+                        android:text="(solution)"
+                        android:textIsSelectable="true"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/rule2Resultm1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="6dp"
+                        android:text="(result)"
+                        android:textIsSelectable="true"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:padding="5dp"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/rule3Text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="6dp"
+                        android:text="Simpon's 3/8 Rule"
+                        android:textColor="@color/yellow"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/rule3Solutionm1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="6dp"
+                        android:text="(solution)"
+                        android:textIsSelectable="true"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/rule3Resultm1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="6dp"
+                        android:text="(result)"
+                        android:textIsSelectable="true"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:padding="5dp"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/rule4Text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="6dp"
+                        android:text="Boole's Rule"
+                        android:textColor="@color/yellow"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/rule4Solutionm1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="6dp"
+                        android:text="(solution)"
+                        android:textIsSelectable="true"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/rule4Resultm1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="6dp"
+                        android:text="(result)"
+                        android:textIsSelectable="true"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

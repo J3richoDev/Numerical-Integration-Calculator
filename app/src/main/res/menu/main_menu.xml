@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item android:id="@+id/home"
+            android:icon="@drawable/round_home_24"
+            android:title="Home"
+            />
+        <item android:id="@+id/method1"
+            android:icon="@drawable/round_calculate_24"
+            android:title="x, y, h, n"
+            />
+        <item android:id="@+id/method2"
+            android:icon="@drawable/round_calculate_24"
+            android:title="x, y, h, n, x1, x2"
+            />
+        <item android:id="@+id/about"
+            android:icon="@drawable/round_info_outline_24"
+            android:title="About us"
+            />
+</menu>
