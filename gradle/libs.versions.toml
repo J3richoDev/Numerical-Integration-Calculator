@@ -8,6 +8,8 @@ material = "1.12.0"
 activity = "1.9.0"
 constraintlayout = "2.1.4"
 materialVersion = "<version>"
+mathparserOrgMxparser = "6.0.0"
+mxparser = "4.4.2"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -18,6 +20,8 @@ material = { group = "com.google.android.material", name = "material", version.r
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 material-vversion = { module = "com.google.android.material:material", version.ref = "materialVersion" }
+mathparser-org-mxparser = { module = "org.mariuszgromada.math:MathParser.org-mXparser", version.ref = "mathparserOrgMxparser" }
+mxparser = { module = "org.mariuszgromada.math:mxparser", version.ref = "mxparser" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

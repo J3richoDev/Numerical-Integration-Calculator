@@ -4,12 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,19 +17,17 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-import luno.dev.numericalintegration.Solution;
+import org.mariuszgromada.math.mxparser.Expression;
 
 public class Method2 extends AppCompatActivity {
 
     private EditText firstXEditText;
     private EditText lastXEditText;
     private EditText nEditText;
+    private EditText customEquationEditText;
     private TextView resultTextView;
-    private Spinner functionSpinner;
-    private int selectedFunction;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,26 +63,9 @@ public class Method2 extends AppCompatActivity {
         firstXEditText = findViewById(R.id.firstX);
         lastXEditText = findViewById(R.id.lastX);
         nEditText = findViewById(R.id.n);
-        //resultTextView = findViewById(R.id.resultTextView);
-        functionSpinner = findViewById(R.id.functionSpinner);
+        customEquationEditText = findViewById(R.id.customEquation); // Add this line in your XML layout
+//        resultTextView = findViewById(R.id.resultTextView);
         Button computeButton = findViewById(R.id.computeButton);
-
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.functions_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        functionSpinner.setAdapter(adapter);
-
-        functionSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                selectedFunction = position;
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                selectedFunction = 0;
-            }
-        });
 
         computeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,19 +106,16 @@ public class Method2 extends AppCompatActivity {
         String x2 = String.valueOf(lastX);
         String nValue = String.valueOf(n);
 
-//        if (n % 2 != 0) {
-//            resultTextView.setText("For Simpson's Rules, n must be even.");
-//            return;
-//        }
-
         double h = (lastX - firstX) / n;
 
         double[] xValues = new double[n + 1];
         double[] fxValues = new double[n + 1];
 
+        String customEquation = customEquationEditText.getText().toString();
+
         for (int i = 0; i <= n; i++) {
             xValues[i] = firstX + i * h;
-            fxValues[i] = f(xValues[i], selectedFunction);
+            fxValues[i] = f(xValues[i], customEquation);
         }
 
         double trapezoidalRuleResult = computeTrapezoidalRule(fxValues, h);
@@ -174,21 +149,10 @@ public class Method2 extends AppCompatActivity {
         startActivity(intent);
     }
 
-
-
-    private double f(double x, int functionIndex) {
-        switch (functionIndex) {
-            case 0:
-                return Math.sin(Math.pow(2, x)) * Math.exp(Math.cos(Math.pow(x, 2)));
-            case 1:
-                return Math.pow(x, -1 / x) * Math.pow(1.1, Math.pow(x, 2));
-            case 2:
-                return Math.pow(3, x * Math.sin(Math.sqrt(x))) * x;
-            case 3:
-                return Math.cos(x) * Math.exp(x);
-            default:
-                return 0;
-        }
+    private double f(double x, String customEquation) {
+        Expression expression = new Expression(customEquation);
+        expression.addArguments(new org.mariuszgromada.math.mxparser.Argument("x = " + x));
+        return expression.calculate();
     }
 
     private double computeTrapezoidalRule(double[] fxValues, double h) {
@@ -215,9 +179,6 @@ public class Method2 extends AppCompatActivity {
     private double computeSimpsonThreeEighthRule(double[] fxValues, double h) {
         double sum = 0.0;
         int n = fxValues.length - 1;
-//        if (n % 3 != 0) {
-//            return Double.NaN; // Simpson's 3/8 rule requires n to be a multiple of 3.
-//        }
         for (int i = 1; i < n; i++) {
             if (i % 3 == 0) {
                 sum += 2 * fxValues[i];
@@ -232,9 +193,6 @@ public class Method2 extends AppCompatActivity {
     private double computeBooleRule(double[] fxValues, double h) {
         double sum = 0.0;
         int n = fxValues.length - 1;
-//        if (n % 4 != 0) {
-//            return Double.NaN; // Boole's rule requires n to be a multiple of 4.
-//        }
         for (int i = 1; i < n; i++) {
             if (i % 4 == 0) {
                 sum += 14 * fxValues[i];
