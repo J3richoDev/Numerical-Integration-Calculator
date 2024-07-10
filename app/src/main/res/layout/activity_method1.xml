@@ -127,14 +127,42 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/hinttext4"
+                android:id="@+id/hinttext7"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:paddingStart="32dp"
+                android:text="• Separate values with comma  ( , ) "/>
+
+            <TextView
+                android:id="@+id/hinttext4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:paddingStart="32dp"
+                android:text="• Example:" />
+
+            <TextView
+                android:id="@+id/hinttext5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:paddingStart="32dp"
+                android:text="           x : 2.1,2.4,2.7,3.0,3.3" />
+
+            <TextView
+                android:id="@+id/hinttext6"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginBottom="16dp"
                 android:padding="8dp"
                 android:paddingStart="32dp"
-                android:text="• Separate values with comma  ( , ) "/>
+                android:text="           f(x) : 256.56,327.27,126.75,279.94,173.82" />
+
 
 
             <LinearLayout

@@ -85,7 +85,7 @@
                     android:layout_height="50dp"
                     android:layout_marginEnd="16dp"
                     android:hint="Enter first x"
-                    android:inputType="numberDecimal" />
+                    android:inputType="numberDecimal|numberSigned" />
 
                 <TextView
                     android:id="@+id/label2"
@@ -103,7 +103,7 @@
                     android:layout_height="50dp"
                     android:layout_marginEnd="16dp"
                     android:hint="Enter last x"
-                    android:inputType="numberDecimal" />
+                    android:inputType="numberDecimal|numberSigned" />
 
             </LinearLayout>
 
